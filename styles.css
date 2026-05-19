@@ -93,6 +93,51 @@ nav {
   font-weight: 700;
 }
 
+.language-control {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.language-control select {
+  min-height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.44);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  color: inherit;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 900;
+  padding: 0 34px 0 14px;
+  cursor: pointer;
+}
+
+.language-control select:focus {
+  outline: 2px solid rgba(245, 184, 75, 0.72);
+  outline-offset: 2px;
+}
+
+.language-control select option {
+  color: var(--ink);
+}
+
+.site-header.is-solid .language-control select {
+  border-color: var(--line);
+  background: #fff;
+}
+
+#google_translate_element,
+.goog-te-banner-frame,
+.goog-te-gadget,
+.goog-te-balloon-frame,
+.skiptranslate > iframe {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+}
+
 .header-action,
 .button {
   display: inline-flex;
