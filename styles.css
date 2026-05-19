@@ -423,7 +423,7 @@ li::before {
 .mini-hero {
   height: 132px;
   border-radius: 20px;
-  background: url("../mybeach-cidadao/assets/images/pitangueiras.jpg") center/cover;
+  background: url("./assets/images/pitangueiras.jpg") center/cover;
 }
 
 .phone-screen h4 {
