@@ -263,6 +263,11 @@ h1 {
   color: #fff;
 }
 
+.button.government {
+  background: var(--sun);
+  color: #172236;
+}
+
 .section {
   padding: clamp(58px, 8vw, 108px) clamp(20px, 5vw, 72px);
 }
@@ -991,17 +996,26 @@ li::before {
 }
 
 .cta {
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1.28fr);
   background: #dff1ee;
   align-items: start;
+  gap: 28px;
 }
 
-.cta > div {
+.cta-heading {
   width: min(760px, 100%);
 }
 
+.contact-forms {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  gap: 18px;
+  width: 100%;
+}
+
 .contact-form {
-  width: min(460px, 100%);
+  width: 100%;
   display: grid;
   gap: 12px;
   padding: 22px;
@@ -1009,6 +1023,30 @@ li::before {
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.84);
   box-shadow: 0 18px 42px rgba(18, 32, 51, 0.1);
+}
+
+.government-form {
+  border-color: rgba(8, 126, 164, 0.34);
+  box-shadow: 0 22px 54px rgba(8, 48, 74, 0.14);
+}
+
+.form-heading {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.form-heading h3 {
+  margin: 0;
+  color: var(--deep);
+  font-size: clamp(20px, 2vw, 26px);
+  line-height: 1.1;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 10px;
 }
 
 .contact-form label {
@@ -1021,6 +1059,7 @@ li::before {
 }
 
 .contact-form input,
+.contact-form select,
 .contact-form textarea {
   width: 100%;
   border: 1px solid var(--line);
@@ -1036,6 +1075,7 @@ li::before {
 }
 
 .contact-form input:focus,
+.contact-form select:focus,
 .contact-form textarea:focus {
   border-color: var(--sea);
   box-shadow: 0 0 0 4px rgba(8, 126, 164, 0.12);
@@ -1105,6 +1145,11 @@ li::before {
   .module-card.agent {
     grid-column: 1 / -1;
   }
+
+  .cta,
+  .contact-forms {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 720px) {
@@ -1165,11 +1210,18 @@ li::before {
   .hero-actions,
   .cta {
     align-items: stretch;
+  }
+
+  .hero-actions {
     flex-direction: column;
   }
 
   .button {
     width: 100%;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
   }
 
   .metrics,

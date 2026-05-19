@@ -35,7 +35,7 @@
         </select>
         <div id="google_translate_element" aria-hidden="true"></div>
       </div>
-      <a class="header-action" href="#contato">Solicitar apresentação</a>
+      <a class="header-action" href="#contato">Fale conosco</a>
     </header>
 
     <main>
@@ -51,6 +51,7 @@
           <div class="hero-actions">
             <a class="button primary" href="#apps">Ver módulos</a>
             <a class="button secondary" href="#operacao">Fluxo operacional</a>
+            <a class="button government" href="#governo">Atendimento para governo</a>
           </div>
         </div>
       </section>
@@ -367,32 +368,119 @@
       </section>
 
       <section class="section cta" id="contato">
-        <div>
+        <div class="cta-heading">
           <p class="eyebrow">Apresentação executiva</p>
           <h2>My Beach está pronto para ser demonstrado como solução completa</h2>
           <p>
-            Uma apresentação clara da solução My Beach para famílias, guarda-vidas, gestores públicos e operadores de praia.
+            Escolha o canal adequado para solicitar uma apresentação, iniciar uma conversa institucional ou avaliar a solução para uma operação de praia.
           </p>
         </div>
-        <form class="contact-form" action="mailto:contato@mybeach.com.br" method="post" enctype="text/plain">
-          <label>
-            Nome
-            <input name="nome" type="text" autocomplete="name" required />
-          </label>
-          <label>
-            E-mail
-            <input name="email" type="email" autocomplete="email" required />
-          </label>
-          <label>
-            Telefone
-            <input name="telefone" type="tel" autocomplete="tel" required />
-          </label>
-          <label>
-            Mensagem
-            <textarea name="mensagem" rows="4">Tenho interesse em uma apresentação da solução My Beach.</textarea>
-          </label>
-          <button class="button primary" type="submit">Solicite uma apresentação</button>
-        </form>
+        <div class="contact-forms">
+          <form class="contact-form government-form" id="governo" action="mailto:contato@mybeach.com.br" method="post" enctype="text/plain">
+            <input type="hidden" name="tipo_de_contato" value="Governo ou órgão público" />
+            <div class="form-heading">
+              <p class="eyebrow">Governo e órgãos públicos</p>
+              <h3>Solicitar apresentação institucional</h3>
+            </div>
+            <label>
+              Órgão público
+              <input name="orgao_publico" type="text" autocomplete="organization" required />
+            </label>
+            <div class="form-grid">
+              <label>
+                Município
+                <input name="municipio" type="text" required />
+              </label>
+              <label>
+                Estado
+                <input name="estado" type="text" maxlength="2" required />
+              </label>
+            </div>
+            <label>
+              Tipo de órgão
+              <select name="tipo_de_orgao" required>
+                <option value="">Selecione</option>
+                <option>Prefeitura</option>
+                <option>Defesa Civil</option>
+                <option>Guarda Municipal</option>
+                <option>Corpo de Bombeiros</option>
+                <option>Secretaria de Turismo</option>
+                <option>Secretaria de Segurança</option>
+                <option>Outro órgão público</option>
+              </select>
+            </label>
+            <label>
+              Nome do responsável
+              <input name="responsavel" type="text" autocomplete="name" required />
+            </label>
+            <div class="form-grid">
+              <label>
+                Cargo
+                <input name="cargo" type="text" required />
+              </label>
+              <label>
+                Telefone / WhatsApp
+                <input name="telefone" type="tel" autocomplete="tel" required />
+              </label>
+            </div>
+            <label>
+              E-mail institucional
+              <input name="email_institucional" type="email" autocomplete="email" required />
+            </label>
+            <label>
+              Interesse principal
+              <select name="interesse_principal" required>
+                <option value="">Selecione</option>
+                <option>Apresentação institucional</option>
+                <option>Demonstração técnica</option>
+                <option>Projeto piloto</option>
+                <option>Proposta comercial</option>
+                <option>Parceria para operação de praia</option>
+              </select>
+            </label>
+            <label>
+              Necessidades da operação
+              <textarea name="necessidades" rows="4" placeholder="Ex.: praias atendidas, equipe de guarda-vidas, criança perdida, SOS, painel operacional, alertas preventivos."></textarea>
+            </label>
+            <button class="button primary" type="submit">Enviar solicitação governamental</button>
+          </form>
+
+          <form class="contact-form" id="empresas" action="mailto:contato@mybeach.com.br" method="post" enctype="text/plain">
+            <input type="hidden" name="tipo_de_contato" value="Empresa ou usuário final" />
+            <div class="form-heading">
+              <p class="eyebrow">Empresas e usuário final</p>
+              <h3>Falar sobre demonstração ou parceria</h3>
+            </div>
+            <label>
+              Nome
+              <input name="nome" type="text" autocomplete="name" required />
+            </label>
+            <label>
+              E-mail
+              <input name="email" type="email" autocomplete="email" required />
+            </label>
+            <label>
+              Telefone / WhatsApp
+              <input name="telefone" type="tel" autocomplete="tel" required />
+            </label>
+            <label>
+              Perfil
+              <select name="perfil" required>
+                <option value="">Selecione</option>
+                <option>Empresa</option>
+                <option>Hotel, quiosque ou operação turística</option>
+                <option>Usuário final</option>
+                <option>Investidor ou parceiro</option>
+                <option>Outro</option>
+              </select>
+            </label>
+            <label>
+              Mensagem
+              <textarea name="mensagem" rows="4">Tenho interesse em uma apresentação da solução My Beach.</textarea>
+            </label>
+            <button class="button primary" type="submit">Enviar contato</button>
+          </form>
+        </div>
       </section>
     </main>
 
